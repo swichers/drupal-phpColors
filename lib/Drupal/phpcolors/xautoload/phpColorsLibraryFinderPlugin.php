@@ -13,7 +13,13 @@ class phpColorsLibraryFinderPlugin implements \xautoload_FinderPlugin_Interface 
 
   protected $libDir;
 
-  function __construct($lib_dir) {
+  /**
+   * Plugin constructor.
+   *
+   * @param string $lib_dir
+   *   Path to the library folder to search within.
+   */
+  public function __construct($lib_dir) {
 
     $this->libDir = $lib_dir;
   }
@@ -37,7 +43,7 @@ class phpColorsLibraryFinderPlugin implements \xautoload_FinderPlugin_Interface 
    * @return bool
    *   TRUE on success, FALSE on failure.
    */
-  function findFile($api, $path_fragment, $path_suffix) {
+  public function findFile($api, $path_fragment, $path_suffix) {
 
     if ('.' === dirname($path_suffix)) {
 

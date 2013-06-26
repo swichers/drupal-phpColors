@@ -17,7 +17,7 @@ function phpcolors_libraries_info() {
     'vendor url' => 'http://mexitek.github.com/phpColors',
     'download url' => 'http://mexitek.github.com/phpColors',
     'path' => 'src',
-    'xautoload' =>  function ($api) {
+    'xautoload' => function ($api) {
 
       $plugin = new Drupal\phpcolors\xautoload\phpColorsLibraryFinderPlugin('sites/all/libraries/phpcolors');
       $api->namespacePlugin('phpColors', $plugin);

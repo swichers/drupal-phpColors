@@ -28,10 +28,10 @@ USAGE
 
 using phpColors\Color;
 
-// Initialize my color
-$myBlue = new Color("#336699");
+// Initialize my color.
+$my_blue = new Color("#336699");
 
-echo $myBlue->darken();
+echo $my_blue->darken();
 // 1a334d
 ?>
 
