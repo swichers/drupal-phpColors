@@ -1,14 +1,13 @@
 INTRODUCTION
 ------------
 
-This module provides library and xautoload integration for the phpColors
-library. The phpColors library provides an easy-to-use PHP class for dealing
-with color manipulation.
+This module provides composer integration for the phpColors library. The
+phpColors library provides an easy-to-use PHP class for dealing with color
+manipulation.
 
 REQUIREMENTS
 ------------
-libraries https://drupal.org/project/libraries
-xautoload https://drupal.org/project/xautoload
+composer_manager https://www.drupal.org/project/composer_manager
 phpColors http://mexitek.github.io/phpColors
 
 INSTALLATION
@@ -16,23 +15,25 @@ INSTALLATION
 
  1. Install as usual, see http://drupal.org/node/70151 for further information.
 
- 2. Download the phpColors library from http://mexitek.github.io/phpColors/ and
-    install into sites/all/libraries/phpcolors.
-
-    git clone git://github.com/mexitek/phpColors.git sites/all/libraries/phpcolors
+ 2. Run `drush composer-manager install -o` or follow the steps from the composer manager project.
 
 USAGE
 -----
 
 <?php
 
-using phpColors\Color;
+use Mexitek\PHPColors\Color;
 
-// Initialize my color.
 $my_blue = new Color("#336699");
-
 echo $my_blue->darken();
-// 1a334d
+?>
+
+or
+
+<?php
+
+  $my_blue = phpcolors_get_color('#336699');
+  echo $my_blue->darken();
 ?>
 
 See http://mexitek.github.io/phpColors/ for more in depth documentation.
